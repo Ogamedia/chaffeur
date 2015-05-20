@@ -1,0 +1,69 @@
+<head>
+	<title>hired</title>
+</head>
+
+<body>
+	<h1>CHAFFEUR</h1>
+
+	{{> hello}}
+</body>
+
+<template name="hello">
+
+	<div class="container col-lg-3  col-md-3" id="allForm">
+		{{> countrySelector}}
+		<!-- {{> quickForm collection="Details" id="hun" type="insert"}} -->
+
+		{{#autoForm id="selectForm" collection="Details" type="insert"}}
+		<div class="row">
+			<div class="col-lg-5 col-md-4">
+				{{> afFormGroup name="pickLocation" class="sectionOne"}}
+			</div>
+			<div class="col-lg-5 col-md-4">
+				{{> afFormGroup name="dropLocation" class="sectionOne"}}
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-lg-5 col-md-4">
+				{{> afFormGroup name="pickDate" type="date" class="sectionOne"}}
+			</div>
+			<div class="col-lg-5 col-md-4">
+				{{> afFormGroup name="dropDate"  type="date" class="sectionOne"}}
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-lg-5 col-md-4">
+				{{> afFormGroup name="pickTime" options="allowed"  class="sectionOne"}}
+			</div>
+			<div class="col-lg-5 col-md-4">
+				{{> afFormGroup name="dropTime" options="allowed" class="sectionOne"}}
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-8 col-lg-8">
+				{{> afFormGroup name="range" options="allowed" noselect=true}}
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-8 col-lg-8">
+				{{> afFormGroup name="phone" class="sectionOne"}}
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-8 col-lg-8">
+				{{> afFormGroup name="Email" class="sectionOne"}}
+			</div>
+		</div>
+		{{/autoForm}}
+	</div>
+
+</template>
+
+
+<template name="countrySelector">
+	<select>
+		{{#each countries}}
+		<option value="{{name}}">{{name}}</option>
+		{{/each}}
+	</select>
+</template>

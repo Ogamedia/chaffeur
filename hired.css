@@ -1,0 +1,17 @@
+/* CSS declarations go here */
+#sectionOne {
+	border: 1px black solid;
+}
+
+.row {
+	margin-right: -19px;
+	margin-left: -14px;
+}
+
+.form-group {
+	margin-bottom: -10px;
+}
+
+#allForm {
+	background: pink;
+}
