@@ -1,3 +1,7 @@
 form #selectForm{
 	width: 44em;
 }
+
+h2 #value_prop {
+	margin-top: 20%;
+}
