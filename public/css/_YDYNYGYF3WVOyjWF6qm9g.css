@@ -4,6 +4,27 @@ html{height:100%}body{min-height:100%;-webkit-perspective:400px;perspective:400p
 		left: 27%;
 		top: 60%;
 		z-index: 10;
-		width: 50em;
+		width: 200em;
 	}
+}
+
+h1, h2{
+  color: #fff;
+}
+
+p{
+  color: #fff;
+  font-size: 20px;
+  padding: 5px;
+}
+
+#textbody{
+  border: 1px solid #000;
+  background-color: black;
+  opacity: 0.8;
+  border-radius: 3px;
+  height: 250px;
+  width: 600px;
+  padding: 20px;
+
 }
