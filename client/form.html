@@ -36,11 +36,13 @@
 			<div class="col-lg-6 col-md-4">
 				{{> afFormGroup name="range" options="allowed" noselect=true}}
 			</div> 
-			<select>
-			{{#each countries}}
-			<option value="{{name}}">{{name}}</option>
-			{{/each}}
-		</select>
+
+			{{> afFormGroup name="carType" options="allowed" noselect=true}}
+			<!-- <select>
+				{{#each countries}}
+				<option value="{{name}}">{{name}}</option>
+				{{/each}}
+			</select> -->
 		</div> 
 		<div class="row"> 
 			<div class="col-lg-12">
