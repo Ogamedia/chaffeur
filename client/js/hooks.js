@@ -35,9 +35,10 @@
  			}
 
  			var html=Blaze.toHTMLWithData(Template.mailContent, dataContext);
+ 			var Chauffeur = "carhiregh@gmail.com"
 
  			var options = {
- 				from: "kwame.yeboah@meltwater.org",
+ 				from: Chauffeur,
  				to: emailAddress,
  				subject: "Dear Customer ",
  				html: html

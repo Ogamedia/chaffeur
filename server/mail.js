@@ -13,5 +13,5 @@ Meteor.methods({
 
 
 Meteor.startup(function () {
-  process.env.MAIL_URL = 'smtp://kwame.yeboah@meltwater.org:kwameMEST@smtp.gmail.com:465';
+  process.env.MAIL_URL = 'smtp://carhiregh@gmail.com:mestcapstone@smtp.gmail.com:465';
 });
