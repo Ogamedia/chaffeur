@@ -1,25 +1,35 @@
- AutoForm.hooks({
+AutoForm.hooks({
 
- 	selectForm: {
- 		onSuccess: function(formType, result) {
- 			var modal = $('#modalItem').modal('show');
- 			var item = Details.findOne({_id: result});
- 			console.log(item)
+	selectForm: {
+		onSuccess: function(formType, result) {
+			var modal = $('#modalItem').modal('show');
+			var item = Details.findOne({_id: result});
+			console.log(item)
  			// email variables
  			var pickLocation= item.pickLocation;
  			var dropLocation = item.dropLocation;
+
  			var pickDate = item.pickDate;
  			var dropDate = item.dropDate;
+
  			var pickTime = item.pickTime;
  			var dropTime = item.dropTime;
+
  			var range = item.range;
  			var carType = item.carType;
  			var phone = item.phone;
  			var emailAddress = item.Email;
 
+ 			var price = 0;
+ 			var numberOfDays = 0;
+ 			var costofJourney = 0;
+
+
+ 			numberOfDays = 1 + (moment(dropDate).dayOfYear() - moment(pickDate).dayOfYear());
+ 			console.log(numberOfDays);
 
  			// price calculation
- 			var price = 0;
+
  			// based on location
  				// location within accra
  				if (pickLocation == "Accra International Airport (Kotoka)" || "Accra") {
@@ -90,6 +100,16 @@
  					}
  				}
 
+ 			// 
+ 			// cost
+
+ 			
+ 			// calculate discount
+ 			if (numberOfDays > 3) {
+ 				costofJourney = (price * numberOfDays) * 0.9
+ 			} else {
+ 				costofJourney = price * numberOfDays;
+ 			}
 
  			// email variables
  			var dataContext={
@@ -103,7 +123,9 @@
  				car_type: carType,
  				phone_number: phone,
  				email_address: emailAddress,
- 				pricing: price
+ 				pricing: price,
+ 				duration: numberOfDays,
+ 				cost: costofJourney
  			}
 
  			var html=Blaze.toHTMLWithData(Template.mailContent, dataContext);
@@ -115,6 +137,8 @@
  				subject: "Dear Customer ",
  				html: html
  			}
+
+
 
  			Meteor.call('sendEmail', options);
  		},
