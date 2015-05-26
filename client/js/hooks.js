@@ -18,8 +18,29 @@
  			var emailAddress = item.Email;
 
 
- 			// email variables
+ 			// price calculation
+ 			var price = 0;
+ 				// based on location"Mini-Bus", "Sedan", "SUV"
+ 				if (pickLocation == "Accra International Airport (Kotoka)" || "Accra") {
+ 					if (carType == "Sedan", "SUV") {
+ 						price = 80;
+ 					} else if(carType == "SUV"){
+ 						price = 140;
+ 					}
+ 					else if(carType == "Mini-Bus"){
+ 						price = 150;
+ 					} else {
+ 						price = 100;
+ 					}
+ 				} else if (pickLocation == "Accra International Airport (Kotoka)" || "Accra") {
 
+ 				} else {
+
+ 					// based on car type
+ 				}
+
+
+ 			// email variables
  			var dataContext={
  				pick_location: pickLocation,
  				drop_location: dropLocation,
